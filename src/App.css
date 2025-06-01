@@ -1,8 +1,11 @@
+@import "tailwindcss";
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  position: relative;
 }
 
 .logo {
@@ -11,26 +14,13 @@
   will-change: filter;
   transition: filter 300ms;
 }
+
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
 }
 
 .card {
@@ -38,5 +28,33 @@
 }
 
 .read-the-docs {
-  color: #888;
+  margin-top: 2rem;
+  opacity: 0.8;
+}
+
+/* Theme-specific styles for the select dropdown */
+select {
+  background-color: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+
+/* Violet Light theme */
+body select {
+  border-color: #8b5cf6;
+}
+
+/* Violet Dark theme */
+body.v-dark select {
+  border-color: #a78bfa;
+}
+
+/* Blue Light theme */
+body.b-light select {
+  border-color: #3b82f6;
+}
+
+/* Blue Dark theme */
+body.b-dark select {
+  border-color: #60a5fa;
 }
