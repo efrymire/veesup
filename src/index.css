@@ -1,33 +1,113 @@
 @import "tailwindcss/preflight";
 @tailwind utilities;
 
-@layer base {
-  body {
-    @reference min-h-screen min-w-[320px] flex items-center justify-center m-0;
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+:root {
+  /* Violet Light theme variables */
+  --v-light-primary: #AD96DC;
+  --v-light-secondary: #f8ebff;
+  --v-light-tertiary: #7763a5;
+  --v-light-accent: #B9975B;
+  --v-light-text-primary: #010101;
+  --v-light-text-secondary: var(--v-light-tertiary);
+  
+  /* Violet Dark theme variables */
+  /* --v-dark-primary: #a78bfa;
+  --v-dark-secondary: #c4b5fd;
+  --v-dark-accent: #8b5cf6; */
+  
+  /* Blue Light theme variables */
+  --b-light-primary: #3b82f6;
+  --b-light-secondary: #acb8ef;
+  --b-light-tertiary: #002664;
+  --b-light-accent: #eee;
+  --b-light-text-primary: #010101;
+  --b-light-text-secondary: var(--b-light-tertiary);
+  
+  /* Blue Dark theme variables */
+  /* --b-dark-primary: #60a5fa;
+  --b-dark-secondary: #93c5fd;
+  --b-dark-accent: #3b82f6; */
+}
 
+html, #root {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  min-height: 100vh;
+  min-width: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  font-family: "IBM Plex Sans", "Helvetica Neue", system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
   /* Default theme (Violet Light) */
-  body {
-    @reference bg-v-light-background text-v-light-text;
-  }
+  /* background-color: var(--v-light-primary);
+  --text-primary: #010101;
+  color: var(--v-text-primary); */
+}
 
-  /* Violet Dark theme */
-  body.v-dark {
-    @reference bg-v-dark-background text-v-dark-text;
+body.v-light {
+  --color-primary: var(--v-light-primary);
+  background-color: var(--v-light-primary);
+  color: var(--v-light-text-primary);
+  .text-secondary {
+    color: var(--v-light-text-secondary);
   }
-
-  /* Blue Light theme */
-  body.b-light {
-    @reference bg-b-light-background text-b-light-text;
+  .bg-accent {
+    background-color: var(--v-light-accent);
   }
-
-  /* Blue Dark theme */
-  body.b-dark {
-    @reference bg-b-dark-background text-b-dark-text;
+  .bg-tertiary {
+    background-color: var(--v-light-tertiary);
   }
 }
+
+/* Violet Dark theme */
+/* body.v-dark {
+  background-color: var(--v-dark-primary);
+  --text-primary: #010101;
+  color: var(--v-text-primary);
+} */
+
+/* Blue Light theme */
+body.b-light {
+  background-color: var(--b-light-primary);
+  color: var(--b-light-text-primary);
+  .text-secondary {
+    color: var(--b-light-text-secondary);
+  }
+
+  .bg-accent {
+    background-color: var(--b-light-accent);
+  }
+  .bg-tertiary {
+    background-color: var(--b-light-tertiary);
+  }
+}
+
+/* Blue Dark theme */
+/* body.b-dark {
+  background-color: var(--b-dark-primary);
+    --text-primary: #010101;
+    color: var(--v-text-primary);
+} */
+
+
+/* Theme-specific styles for buttons */
+button {
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
